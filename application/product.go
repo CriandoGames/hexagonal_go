@@ -33,7 +33,7 @@ type ProductWriter interface {
 }
 
 // principio de segregação de interfaces SOLID - ISP
-type ProductRepositoryInterface interface {
+type ProductPersistenceInterface interface {
 	ProductReader
 	ProductWriter
 }

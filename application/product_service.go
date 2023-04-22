@@ -1,7 +1,7 @@
 package application
 
 type ProductService struct {
-	ProductRepository ProductRepositoryInterface
+	ProductRepository ProductPersistenceInterface
 }
 
 func (p *ProductService) Get(id string) (ProductInterface, error) {
