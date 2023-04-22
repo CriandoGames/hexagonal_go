@@ -21,7 +21,7 @@ func (s *ProductService) Create(name string, price float64) (ProductInterface, e
 	product.Price = price
 
 	_, err := product.IsValid()
-	
+
 	if err != nil {
 		return nil, err
 	}
@@ -33,4 +33,40 @@ func (s *ProductService) Create(name string, price float64) (ProductInterface, e
 	}
 
 	return result, nil
+}
+
+func (s *ProductService) Enable(product ProductInterface) (ProductInterface, error) {
+
+	err := product.Enable()
+
+	if err != nil {
+		return nil, err
+	}
+
+	result, err := s.ProductRepository.Save(product)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return result, nil
+
+}
+
+func (s *ProductService) Disable(product ProductInterface) (ProductInterface, error) {
+
+	err := product.Disable()
+
+	if err != nil {
+		return nil, err
+	}
+
+	result, err := s.ProductRepository.Save(product)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return result, nil
+
 }
