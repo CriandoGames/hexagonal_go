@@ -17,6 +17,27 @@ type ProductInterface interface {
 	GetId() string
 }
 
+type ProductServiceInterface interface {
+	Get(id string) (ProductInterface, error)
+	Create(product ProductInterface) (ProductInterface, error)
+	Enable(product ProductInterface) (ProductInterface, error)
+	Disable(product ProductInterface) (ProductInterface, error)
+}
+
+type ProductReader interface {
+	Get(id string) (ProductInterface, error)
+}
+
+type ProductWriter interface {
+	Save(product ProductInterface) (ProductInterface, error)
+}
+
+// principio de segregação de interfaces SOLID - ISP
+type ProductRepositoryInterface interface {
+	ProductReader
+	ProductWriter
+}
+
 const (
 	DISABLED = "disabled"
 	ENABLED  = "enabled"
