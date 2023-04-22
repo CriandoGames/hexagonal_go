@@ -14,13 +14,14 @@ Este projeto é um ótimo ponto de partida para quem está interessado em aprend
 
 Bom estudo!
 
-		<li>Ferramentas:
+<details> 
+		<summary>Ferramentas!</summary>
 			<ul>
 				<li><a href="https://github.com/microsoft/vscode">Visual Studio Code</a></li>
 				<li><a href="https://go.dev/">go lang</a></li>
 			</ul>
 		</li>
-
+</details>
 <!--
 Made with 🖤
 -->
